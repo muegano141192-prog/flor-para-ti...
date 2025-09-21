@@ -76,7 +76,7 @@
         🔒<br />
         Ingrese la contraseña
       </h2>
-      <div class="input-display" id="inputDisplay">••••</div>
+      <div class="input-display" id="inputDisplay">••••••••</div>
       <div class="keypad">
         <button class="key" onclick="enterDigit('1')">1</button>
         <button class="key" onclick="enterDigit('2')">2</button>
@@ -92,21 +92,21 @@
     </div>
 
     <script>
-      const correctPassword = "0101";
+      const correctPassword = "12032011";
       const display = document.getElementById("inputDisplay");
       let input = "";
       function enterDigit(digit) {
-        if (input.length < 4) {
+        if (input.length < 8) {
           input += digit;
         }
-        display.textContent = input.padEnd(4, "•");
-        if (input.length === 4) {
+        display.textContent = input.padEnd(8, "•");
+        if (input.length === 8) {
           if (input === correctPassword) {
             window.location.href = "flower.html"; 
           } else {
             alert("Contraseña incorecta, intenta de nuevo");
             input = "";
-            display.textContent = "••••";
+            display.textContent = "••••••••";
           }
         }
       }
